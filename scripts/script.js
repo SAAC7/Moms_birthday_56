@@ -58,6 +58,9 @@ async function sendToGoogleSheets(payload, thanksId) {
     // 1. Ocultar los formularios actuales
     document.getElementById('section-si').classList.add('hidden');
     document.getElementById('section-no').classList.add('hidden');
+
+    const formId = thanksId === 'thanks-si' ? 'form-si' : 'form-no';
+    const form = document.getElementById(formId);
     
     try {
         // 2. Enviar datos al script de Google
@@ -68,7 +71,7 @@ async function sendToGoogleSheets(payload, thanksId) {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload)
         });
-
+        form.reset();
         // 3. Mostrar el mensaje de éxito correspondiente
         const thanksSection = document.getElementById(thanksId);
         thanksSection.classList.remove('hidden');

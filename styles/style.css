@@ -5,11 +5,11 @@
     /* Gradiente para el texto de oro: más complejo para simular metal */
     --gold: linear-gradient(135deg, #bf953f 0%, #e6dd7e 25%, #b38728 50%, #e6dd7e 75%, #aa771c 100%);
     /* Color de borde de oro sólido */
-    --gold-border: #c49b4c; 
-    
+    --gold-border: #c49b4c;
+
     /* Colores para resaltar texto (extraídos de los SVGs) */
-    --pink-highlight: #b38728; 
-    
+    --pink-highlight: #b38728;
+
     --font-main: 'Playfair Display', serif;
 }
 
@@ -17,7 +17,8 @@ body {
     margin: 0;
     padding: 0;
     font-family: var(--font-main);
-    background-color: #fff; /* Fondo blanco limpio como la imagen */
+    background-color: #fff;
+    /* Fondo blanco limpio como la imagen */
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -25,6 +26,7 @@ body {
     overflow: hidden;
     position: relative;
 }
+
 
 /* --- Marco Dorado Elegante (CSS puro) --- */
 body::before {
@@ -37,7 +39,8 @@ body::before {
     border: 5px solid var(--gold-border);
     box-shadow: inset 0 0 20px rgba(196, 155, 76, 0.2);
     pointer-events: none;
-    z-index: 5; /* Por encima del fondo, debajo de las flores */
+    z-index: 5;
+    /* Por encima del fondo, debajo de las flores */
 }
 
 /* --- Texto de Oro Mejorado --- */
@@ -48,7 +51,7 @@ body::before {
     font-size: 2.8rem;
     font-weight: 700;
     text-align: center;
-    filter: drop-shadow(1px 1px 0px rgba(0,0,0,0.3));
+    filter: drop-shadow(1px 1px 0px rgba(0, 0, 0, 0.3));
     margin-bottom: 25px;
     letter-spacing: 1px;
 }
@@ -56,19 +59,23 @@ body::before {
 /* --- NUEVAS FLORES PROFESIONALES (Usando SVGs externos) --- */
 .flower-frame {
     position: fixed;
-    z-index: 10; /* Por encima de todo */
+    z-index: 10;
+    /* Por encima de todo */
     pointer-events: none;
-    animation: floatFloral 12s ease-in-out infinite; /* Animación sutil */
+    animation: floatFloral 12s ease-in-out infinite;
+    /* Animación sutil */
     background-size: contain;
     background-repeat: no-repeat;
-    opacity: 0.95; /* Casi opacas para claridad */
+    opacity: 0.95;
+    /* Casi opacas para claridad */
 }
 
 /* Esquina Superior Izquierda (Top) */
 .flower-frame.top {
     top: -20px;
     left: -20px;
-    width: 350px; /* Tamaño del viewBox del SVG */
+    width: 350px;
+    /* Tamaño del viewBox del SVG */
     height: 350px;
     background-image: url('../images/flores-top.svg');
     background-position: top left;
@@ -85,13 +92,26 @@ body::before {
 }
 
 /* Eliminamos las barras laterales simples del HTML original */
-.flower-frame.left, .flower-frame.right { display: none; }
+.flower-frame.left,
+.flower-frame.right {
+    display: none;
+}
 
 /* Animación sutil de flotación y rotación */
 @keyframes floatFloral {
-    0%, 100% { transform: translate(0, 0) rotate(0deg); }
-    33% { transform: translate(10px, -15px) rotate(1deg); }
-    66% { transform: translate(-8px, 10px) rotate(-1deg); }
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    33% {
+        transform: translate(10px, -15px) rotate(1deg);
+    }
+
+    66% {
+        transform: translate(-8px, 10px) rotate(-1deg);
+    }
 }
 
 /* --- Contenedores y Transiciones (Sin cambios) --- */
@@ -100,11 +120,12 @@ body::before {
     text-align: center;
     padding: 30px;
     max-width: 90vw;
-    background: rgba(255, 255, 255, 0.95); /* Fondo blanco casi opaco para legibilidad */
+    background: rgba(255, 255, 255, 0.95);
+    /* Fondo blanco casi opaco para legibilidad */
     border-radius: 15px;
     z-index: 20;
     position: relative;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .hidden {
@@ -122,13 +143,13 @@ body::before {
     border-radius: 25px;
     cursor: pointer;
     font-weight: bold;
-    color: #4a370e; 
+    color: #4a370e;
     font-family: var(--font-main);
     font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 1.5px;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .btn:hover {
@@ -140,7 +161,8 @@ body::before {
     transform: translateY(1px);
 }
 
-input, textarea {
+input,
+textarea {
     display: block;
     width: 100%;
     margin: 15px 0;
@@ -152,27 +174,31 @@ input, textarea {
     font-size: 1rem;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
     outline: none;
     border-color: var(--gold-border);
     box-shadow: 0 0 8px rgba(196, 155, 76, 0.2);
 }
 
-.invite-info { 
-    color: #444; 
-    line-height: 1.9; 
-    font-size: 1.15rem;
+.invite-info {
+    color: #444;
+    line-height: 1.5;
+    font-size: 1.8rem;
     margin-bottom: 25px;
 }
+
 .invite-info strong {
-    color: var(--pink-highlight); /* Resaltar 'Cumpleaños' con el rosa fuerte */
+    color: var(--pink-highlight);
+    /* Resaltar 'Cumpleaños' con el rosa fuerte */
     font-weight: 700;
 }
 
 /* --- Sistema de Columnas (Grid) --- */
 .invite-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+    grid-template-columns: 1fr 1fr;
+    /* Dos columnas iguales */
     gap: 20px;
     margin: 20px 0;
     text-align: left;
@@ -186,7 +212,7 @@ input:focus, textarea:focus {
 }
 
 .grid-column p {
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     line-height: 1.4;
     margin-bottom: 10px;
 }
@@ -212,12 +238,59 @@ input:focus, textarea:focus {
 }
 
 /* Responsivo: En celulares se vuelve una sola columna */
+/* --- Responsivo: Ajustes para celular --- */
 @media (max-width: 600px) {
-    .invite-grid {
-        grid-template-columns: 1fr;
+    body {
+        overflow-y: auto; /* Permite scroll vertical */
+        display: flex;
+        flex-direction: column; /* Alinea los elementos en vertical */
+        justify-content: center; /* Permite que el contenido empiece arriba para el scroll */
+        align-items: center; /* ESTO CENTRA EL CONTAINER HORIZONTALMENTE */
+        padding: 40px 0; /* Espacio para que no pegue a los bordes superior/inferior */
+        height: auto; /* Importante para que el scroll funcione */
+        min-height: 100vh;
     }
-    #section-no.container {
-        max-width: 95vw;
+
+    /* Reducimos el tamaño de las flores para ganar espacio visual */
+    .flower-frame {
+        width: 150px;
+        height: 150px;
+    }
+
+    .container {
         padding: 20px;
+        width: 80%; /* Tu ajuste del 80% */
+        margin: 0 auto; /* FUERZA EL CENTRADO HORIZONTAL */
+        max-width: none;
+        box-sizing: border-box;
+    }
+
+    /* Ajuste de textos y elementos internos */
+    .gold-text {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+
+    .invite-grid {
+        grid-template-columns: 1fr; /* Una sola columna en móvil */
+        gap: 10px;
+        margin: 10px 0;
+    }
+
+    .map-container iframe {
+        height: 130px;
+    }
+
+    .timer-box {
+        padding: 10px;
+    }
+
+    #timer {
+        font-size: 1rem;
+    }
+
+    input, .btn {
+        padding: 10px;
+        margin: 8px 0;
     }
 }
