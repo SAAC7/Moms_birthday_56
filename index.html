@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación Especial</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="flower-frame top"></div>
+    <div class="flower-frame bottom"></div>
+    <div class="flower-frame left"></div>
+    <div class="flower-frame right"></div>
+
+    <main id="main-content">
+        <div id="step-1" class="container">
+            <h1 class="gold-text">¿Ya sabes qué harás el viernes santo?</h1>
+            <div class="buttons">
+                <button onclick="showSection('si')" class="btn">SÍ</button>
+                <button onclick="showSection('no')" class="btn">NO</button>
+            </div>
+        </div>
+
+        <div id="section-si" class="container hidden">
+            <h1 class="gold-text">¡Cuéntame!</h1>
+            <form id="form-si">
+                <input type="text" placeholder="Tu nombre" required>
+                <textarea placeholder="¿Qué planes tienes?" required></textarea>
+                <button type="submit" class="btn">Enviar</button>
+            </form>
+        </div>
+
+        <div id="section-no" class="container hidden">
+            <h1 class="gold-text">¡Estás de suerte!</h1>
+            <p class="invite-info">
+                Deseo invitarte a que me acompañes en la celebración de <strong>Cumpleaños</strong>.<br><br>
+                📍 Lugar: La Iglesia de Jesucristo de los Santos de los Ulimos dias<br>
+                        Diagonal 12 25A-70 Zona 1, Quetzaltenango<br>
+                📅 Fecha: Viernes Santo<br>
+                ⏰ Hora: 7:00 PM
+            </p>
+            <form id="form-no">
+                <input type="text" placeholder="Tu nombre" required>
+                <input type="number" placeholder="Cantidad de pases" required min="1">
+                <button type="submit" class="btn">Confirmar Asistencia</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
