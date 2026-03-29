@@ -60,7 +60,7 @@ async function sendToGoogleSheets(payload, thanksId) {
     document.getElementById('section-no').classList.add('hidden');
 
     const formId = thanksId === 'thanks-si' ? 'form-si' : 'form-no';
-    const form = document.getElementById(formId);
+    const form = document.getElementById('form-no');
     
     try {
         // 2. Enviar datos al script de Google
@@ -103,7 +103,13 @@ document.getElementById('form-no').addEventListener('submit', function(e) {
         cantidad: this.querySelector('input[type="number"]').value,
         planes: "" 
     };
-    sendToGoogleSheets(payload, 'thanks-no');
+    if (payload["cantidad"]==0){
+        sendToGoogleSheets(payload, 'thanks-si');
+        
+    }else{
+
+        sendToGoogleSheets(payload, 'thanks-no');
+    }
 });
 
 // Mantén aquí tu función showSection() y la del Timer que armamos antes...
